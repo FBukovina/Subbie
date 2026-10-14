@@ -15,9 +15,12 @@
        <p>learrn subnetting, one challenge at a time.</p>
     </header>
 
-   <! -- challenge #001 - VLSM Subnetting -- >
+   <!-- challenge #001 - VLSM Subnetting -->
+
 <section id="level-01">
+
     <h2> LEVEL01 - SUBNETTING BASICS</h2>
+
     <p> how many usable hosts are in /26 network?</p>
 
     <button type="button" class="answer"> 30 </button>
@@ -36,6 +39,7 @@
         your score: <span id="score">0</span>
         </p>
 <section id="level-02" hidden>
+
     <h2> LEVEL 02 - NETWORK ADDRESS</h2>
 
     <p>what is the network address of 192.168.1.70/26?</p>
@@ -47,10 +51,27 @@
     
 <p id="feedback-02" hidden></p>
 <button type="button" id="finish-level" hidden> 
-    done ->
+    next level ->
 </button>
 
 </section> 
+
+<section id="level-03" hidden>
+
+<h2> LEVEL 03 - VLSM</h2>
+
+<p>given the network 192.168.10.0 /24, subnet A needs 100 hosts. If A is allocated first, which subnet should B use for 50 hosts?</p>
+
+<button type="button" class="answer-03">192.168.10.0/26</button>
+<button type="button" class="answer-03">192.168.10.64/26</button>
+<button type="button" class="answer-03">192.168.10.128/26</button>
+<button type="button" class="answer-03">192.168.10.192/26</button>
+
+<p id="feedback-03" hidden></p>
+<button type="button" id="complete-challenge" hidden> 
+    finish challenge ->
+</button>
+</section>
 
 <section id="completed" hidden>
     <h2>challenge completed</h2>
