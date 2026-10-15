@@ -20,6 +20,7 @@ const finalScore = document.getElementById("final-score");
 const level03 = document.getElementById("level-03");
 const buttons03 = document.querySelectorAll(".answer-03");
 const feedback03 = document.getElementById("feedback-03");
+const completeButton = document.getElementById("complete-challenge");
 
 // LEVEL 01 - SUBNETTING
 
@@ -107,6 +108,7 @@ buttons03.forEach(function(button){
 
         scoreDisplay.textContent = score;
         feedback03.hidden = false;
+        completeButton.hidden = false;
     });
 });
     finishButton.addEventListener("click", function() {
@@ -114,4 +116,10 @@ buttons03.forEach(function(button){
         level03.hidden = false;
     });
 
+completeButton.addEventListener("click", function() {
+        level03.hidden = true;
+        completed.hidden = false;
+        finalScore.textContent = score;
+        scoreBox.hidden = true;
 
+});
