@@ -21,6 +21,8 @@ const level03 = document.getElementById("level-03");
 const buttons03 = document.querySelectorAll(".answer-03");
 const feedback03 = document.getElementById("feedback-03");
 const completeButton = document.getElementById("complete-challenge");
+const progressFill = document.getElementById("progress-fill");
+const restartButton = document.getElementById("restart-button");
 
 // LEVEL 01 - SUBNETTING
 
@@ -55,6 +57,7 @@ buttons.forEach(function(button) {
 nextLevelButton.addEventListener("click", function(){
     level01.hidden = true;
     level02.hidden = false;
+    progressFill.style.width = "66.66%";
 });
 
 //LEVEL 02 - NETWORK ADDRESS
@@ -114,6 +117,7 @@ buttons03.forEach(function(button){
     finishButton.addEventListener("click", function() {
         level02.hidden = true;
         level03.hidden = false;
+        progressFill.style.width = "100%";
     });
 
 completeButton.addEventListener("click", function() {
@@ -122,4 +126,27 @@ completeButton.addEventListener("click", function() {
         finalScore.textContent = score;
         scoreBox.hidden = true;
 
+});
+
+restartButton.addEventListener("click", function() {
+    completed.hidden = true;
+    level01.hidden = false;
+
+    score = 0;
+    answered = false;
+    answered02 = false;
+    answered03 = false;
+    progressFill.style.width = "33.33%";
+    scoreDisplay.textContent = 0;
+    scoreBox.hidden = true;
+    feedback.hidden = true;
+    feedback02.hidden = true;
+    feedback03.hidden = true;
+
+    nextLevelButton.hidden = true;
+    finishButton.hidden = true;
+    completeButton.hidden = true;
+
+    level02.hidden = true;
+    level03.hidden = true;
 });

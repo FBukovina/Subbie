@@ -14,3 +14,72 @@ h2 {
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+section {
+    max-width: 640px;
+    margin: 32px auto;
+    padding: 24px;
+    background-color: #1a1a22;
+    border: 1px solid #343440;
+    border-radius: 16px;
+}
+
+
+.answer,
+.answer-02,
+.answer-03 {
+    display: block;
+    margin: 8px auto;
+    padding: 8px 16px;
+    background-color: #343440;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.answer:hover,
+.answer-02:hover,
+.answer-03:hover {
+    background-color: #505065;
+}
+
+#score-box {
+    background-color: #252530;
+    padding: 12px 20px;
+    border-radius: 12px;
+    margin: 20px auto;
+    width: fit-content;
+}
+
+@media (max-width: 600px) {
+    section {
+        padding: 16px;
+        margin: 16px auto;
+        overflow-wrap: anywhere;
+    }
+
+    .answer,
+    .answer-02,
+    .answer-03 {
+        width: 100%;
+        box-sizing: border-box;
+        padding: 14px;
+        white-space: normal;
+    }
+}
+
+#progress-bar {
+    width: 100%;
+    height: 10px;
+    background-color: #343440;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+#progress-fill {
+    width: 33.33%;
+    height: 100%;
+    background-color: #50b98a;
+    border-radius: 10px;
+    transition: width 0.3s ease;
+}
