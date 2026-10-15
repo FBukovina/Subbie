@@ -9,6 +9,9 @@ let answered03 = false;
 const scoreDisplay = document.getElementById("score");
 const scoreBox = document.getElementById("score-box");
 const feedback = document.getElementById("feedback");
+const explanation01 = document.getElementById("explanation-01");
+const explanation02 = document.getElementById("explanation-02");
+const explanation03 = document.getElementById("explanation-03");
 const nextLevelButton = document.getElementById("next-level");
 const level01 = document.getElementById("level-01");
 const level02 = document.getElementById("level-02");
@@ -51,6 +54,7 @@ buttons.forEach(function(button) {
         scoreBox.hidden = false;
         feedback.hidden = false;
         nextLevelButton.hidden = false;
+        explanation01.hidden = false;
     });
 });
 
@@ -85,6 +89,7 @@ buttons02.forEach(function(button){
         scoreDisplay.textContent = score;
         feedback02.hidden = false;
         finishButton.hidden = false;
+        explanation02.hidden = false;
     });
 });
 
@@ -112,6 +117,7 @@ buttons03.forEach(function(button){
         scoreDisplay.textContent = score;
         feedback03.hidden = false;
         completeButton.hidden = false;
+        explanation03.hidden = false;
     });
 });
     finishButton.addEventListener("click", function() {
@@ -139,9 +145,13 @@ restartButton.addEventListener("click", function() {
     progressFill.style.width = "33.33%";
     scoreDisplay.textContent = 0;
     scoreBox.hidden = true;
+
     feedback.hidden = true;
     feedback02.hidden = true;
     feedback03.hidden = true;
+
+    explanation01.hidden = true;
+    explanation02.hidden = true;
 
     nextLevelButton.hidden = true;
     finishButton.hidden = true;

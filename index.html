@@ -32,6 +32,11 @@
     <button type="button" class="answer"> 64 </button>
     <button type="button" class="answer"> 126 </button>
 
+    <p id="explanation-01" hidden>
+        A /26 network has 6 host bits.
+        2^6 = 64 total addresses.
+        Subtract the network and broadcast addresses, leaving 62 usable host addresses.
+    </p>
 
 <button type="button" id="next-level" hidden>
     next level ->
@@ -42,6 +47,9 @@
     <p id="score-box" hidden>
         your score: <span id="score">0</span>
         </p>
+
+   <!-- challenge #002 - VLSM Subnetting -->
+
 <section id="level-02" hidden>
 
     <h2> LEVEL 02 - NETWORK ADDRESS</h2>
@@ -52,6 +60,12 @@
     <button type="button" class="answer-02"> 192.168.1.70</button>
     <button type ="button" class="answer-02">192.168.1.64</button>
     <button type ="button" class="answer-02">192.168.1.128</button>
+
+    <p id="explanation-02" hidden>
+        A /26 subnet contains 64 addresses.
+        The subbnet ranges are 0-63, 64-127, 128-191 and 192-255.
+        Since 70 falls between 64 and 127, the network address is 192.168.1.64.
+    </p>
     
 <p id="feedback-02" hidden></p>
 <button type="button" id="finish-level" hidden> 
@@ -59,6 +73,8 @@
 </button>
 
 </section> 
+
+   <!-- challenge #003 - VLSM Subnetting -->
 
 <section id="level-03" hidden>
 
@@ -70,6 +86,16 @@
 <button type="button" class="answer-03">192.168.10.64/26</button>
 <button type="button" class="answer-03">192.168.10.128/26</button>
 <button type="button" class="answer-03">192.168.10.192/26</button>
+
+<p id="explanation-03" hidden>
+    Subnet A needs 100 hots, so it requires a /25 subnet, which provides 126 usable host addresses.
+
+    Subnet A uses 192.168.10.0 - 192.168.10.127.
+
+    Subnet B needs 50 hosts, so it requires a /26 subnet, which provides 62 usable host addresses.
+
+    The next available subnet is 192.168.10.128/26.
+</p>
 
 <p id="feedback-03" hidden></p>
 <button type="button" id="complete-challenge" hidden> 
