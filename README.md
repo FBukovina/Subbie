@@ -7,9 +7,11 @@ Subbie is an interactive web portal that helps students with their networks stud
 ## Features
 - level 01
 - level 02
+- level 03
 - anti-cheat protection
 - answer validation
 - scoring system
+- randomizer for level 01 and level 02
 
 ## Built with
 - HTML
