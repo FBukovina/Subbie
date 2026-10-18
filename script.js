@@ -76,7 +76,7 @@ buttons02.forEach(function(button){
 
         const answer = button.textContent.trim();
 
-        if (answer === "192.168.1.64") {
+        if (answer === correctAnswer02) {
             feedback02.textContent = "correct answer";
             feedback02.style.color = "green";
             score +=10;
@@ -159,6 +159,7 @@ restartButton.addEventListener("click", function() {
 
     level02.hidden = true;
     level03.hidden = true;
+    generateLevel02();
 });
 
 // random questions shuffle
@@ -168,9 +169,32 @@ const randomIndex = Math.floor(Math.random() * prefixes.length);
 const randomPrefix = prefixes[randomIndex];
 const usableHosts = 2 ** (32 - randomPrefix) -2;
 const question01 = document.getElementById("question-01");
+const question02 = document.getElementById("question-02");
+let correctAnswer02 = "";
 
 question01.textContent = `how many usable hosts are there in a /${randomPrefix} network?`;
 explanation01.textContent = `a /${randomPrefix} network has ${32 - randomPrefix} host bits. that gives ${usableHosts + 2} total addresses, leaving ${usableHosts} usable hosts.`;
 console.log("prefix: /" + randomPrefix);
 console.log("usable hosts:" + usableHosts);
 console.log(prefixes[randomIndex]);
+
+function generateLevel02() {
+    const thirdOctet = Math.floor(Math.random() * 254) + 1;
+    const networkStart = Math.floor(Math.random() * 4) * 64;
+    const lastOctet = networkStart + Math.floor(Math.random() * 62) + 1;
+
+    correctAnswer02 = `192.168.${thirdOctet}.${networkStart}`;
+
+    question02.textContent = `what is the network address of 192.168.${thirdOctet}.${lastOctet}/26`;
+
+    const options = [0, 64, 128, 192];
+
+    buttons02.forEach(function(button, index){
+        button.textContent = `192.168.${thirdOctet}.${options[index]}`;
+
+    });
+
+    explanation02.textContent = `a /26 network contains 64 addresses. ${lastOctet} belongs to the rage ${networkStart}-${networkStart + 63}. the network address is ${correctAnswer02}.`;
+}
+
+generateLevel02();
