@@ -83,3 +83,26 @@ section {
     border-radius: 10px;
     transition: width 0.3s ease;
 }
+
+#explanation-01,
+#explanation-02,
+#explanation-03 {
+    background-color: #252530;
+    padding: 16px;
+    border-radius: 12px;
+    line-height: 1.6;
+    margin-top: 20px;
+    border-left: 3px solid #50b98a;
+}
+
+#next-level,
+#finish-level,
+#complete-challenge,
+#restart-button {
+    background-color: #50b98a;
+    color: #101014;
+    padding: 10px 12px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+}

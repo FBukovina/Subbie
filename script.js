@@ -40,7 +40,7 @@ buttons.forEach(function(button) {
         const answer = Number(button.textContent);
         
       
-        if (answer === 62) {
+        if (answer === usableHosts) {
             feedback.textContent = "correct answer";
             feedback.style.color = "green";
             score +=10;
@@ -152,7 +152,7 @@ restartButton.addEventListener("click", function() {
 
     explanation01.hidden = true;
     explanation02.hidden = true;
-
+    explanation03.hidden = true;
     nextLevelButton.hidden = true;
     finishButton.hidden = true;
     completeButton.hidden = true;
@@ -160,3 +160,17 @@ restartButton.addEventListener("click", function() {
     level02.hidden = true;
     level03.hidden = true;
 });
+
+// random questions shuffle
+
+const prefixes = [25, 26, 27, 28];
+const randomIndex = Math.floor(Math.random() * prefixes.length);
+const randomPrefix = prefixes[randomIndex];
+const usableHosts = 2 ** (32 - randomPrefix) -2;
+const question01 = document.getElementById("question-01");
+
+question01.textContent = `how many usable hosts are there in a /${randomPrefix} network?`;
+explanation01.textContent = `a /${randomPrefix} network has ${32 - randomPrefix} host bits. that gives ${usableHosts + 2} total addresses, leaving ${usableHosts} usable hosts.`;
+console.log("prefix: /" + randomPrefix);
+console.log("usable hosts:" + usableHosts);
+console.log(prefixes[randomIndex]);
